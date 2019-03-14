@@ -1,0 +1,33 @@
+github:
+  api:
+    request_header: "application/vnd.github.antiope-preview+json"
+    token_request_header: "application/vnd.github.machine-man-preview+json"
+  token:
+    ttl: "540000"
+    cacheTtl: "400000"
+
+  repo:
+    owner: ""
+    
+  installation:
+    id: ""
+
+  app:
+    id: ""
+
+    # Base64 encoded der certificate: openssl pkcs8 -topk8 -inform PEM -outform DER -in application.pem -nocrypt | base64
+    certificate: ""
+jenkins:
+  basePath: "jenkins-onprem.build.msap.io"
+  auth:
+    username: ""
+    token: ""
+  job:
+    build:
+      branch: "/job/master/buildWithParameters"
+      path: "/job/Mule-runtime/job/Mule-4.x-Validation"
+      
+check_run:
+  name: "Pull Request Validation"
+config:
+  ignore_branches: "[mule-3.x]" 
